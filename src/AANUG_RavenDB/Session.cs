@@ -2,6 +2,9 @@
 {
 	public class Session
 	{
+		private Session()
+		{}
+
 		public Session(string title, Speaker speaker)
 		{
 			Title = title;
