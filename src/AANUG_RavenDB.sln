@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AANUG_RavenDB", "AANUG_RavenDB\AANUG_RavenDB.csproj", "{4236EFF7-E2F3-4DD1-B2A4-10505FFD70A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AANUG_RavenDB.Tests", "AANUG_RavenDB.Tests\AANUG_RavenDB.Tests.csproj", "{5ED464CD-8A38-486F-91AC-1002F74DF01B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4236EFF7-E2F3-4DD1-B2A4-10505FFD70A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4236EFF7-E2F3-4DD1-B2A4-10505FFD70A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4236EFF7-E2F3-4DD1-B2A4-10505FFD70A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4236EFF7-E2F3-4DD1-B2A4-10505FFD70A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED464CD-8A38-486F-91AC-1002F74DF01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED464CD-8A38-486F-91AC-1002F74DF01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED464CD-8A38-486F-91AC-1002F74DF01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED464CD-8A38-486F-91AC-1002F74DF01B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
