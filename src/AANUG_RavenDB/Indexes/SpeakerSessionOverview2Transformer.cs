@@ -10,7 +10,6 @@ namespace AANUG_RavenDB.Indexes
 			TransformResults = results => (from r in results
 			                               select new
 			                                      {
-				                                      r.SpeakerId,
 				                                      SpeakerName = LoadDocument<Speaker>(r.SpeakerId).Name,
 				                                      r.Count
 			                                      }
