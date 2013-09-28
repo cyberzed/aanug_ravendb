@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using Raven.Imports.Newtonsoft.Json;
 
@@ -8,25 +7,20 @@ namespace AANUG_RavenDB
 {
 	public class Conference
 	{
-		private readonly Dictionary<SessionSlot, List<Session>> schedule = new Dictionary<SessionSlot, List<Session>>();
-
 		public string Id { get; private set; }
 		public string ConferenceName { get; private set; }
+
 		public SessionSlot[] SessionSlots { get; private set; }
 
-		[JsonIgnore]
-		public IReadOnlyDictionary<SessionSlot, List<Session>> Plan
-		{
-			get { return new ReadOnlyDictionary<SessionSlot, List<Session>>(schedule); }
-		}
+		public List<ScheduleItem> Schedule { get; private set; }
 
+		[JsonIgnore]
 		public Session[] Sessions
 		{
 			get
 			{
-				return (from sl in schedule.Values
-				        from s in sl
-				        select s).ToArray();
+				return (from si in Schedule
+				        select si.Session).ToArray();
 			}
 		}
 
@@ -34,6 +28,8 @@ namespace AANUG_RavenDB
 		{
 			ConferenceName = conferenceName;
 			SessionSlots = sessionSlots;
+
+			Schedule = new List<ScheduleItem>();
 		}
 
 		public void AddSession(SessionSlot sessionSlot, Session session)
@@ -46,13 +42,21 @@ namespace AANUG_RavenDB
 			if (!SessionSlots.Contains(sessionSlot))
 				throw new ArgumentOutOfRangeException("sessionSlot");
 
-			var sessionList = new List<Session>();
-
-			if (!schedule.ContainsKey(sessionSlot))
-				schedule[sessionSlot] = sessionList;
-
-			if (!sessionList.Contains(session))
-				sessionList.Add(session);
+			if (!Schedule.Any(si => si.SessionSlot == sessionSlot && si.Session == session))
+				Schedule.Add(new ScheduleItem(sessionSlot, session));
 		}
+	}
+
+	public class ScheduleItem
+	{
+		public ScheduleItem(SessionSlot sessionSlot, Session session)
+		{
+			SessionSlot = sessionSlot;
+			Session = session;
+		}
+
+		public SessionSlot SessionSlot { get; private set; }
+
+		public Session Session { get; private set; }
 	}
 }
