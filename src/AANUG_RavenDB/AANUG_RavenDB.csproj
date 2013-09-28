@@ -54,6 +54,12 @@
     <Compile Include="Generators\SessionGenerator.cs" />
     <Compile Include="Generators\SessionSlotGenerator.cs" />
     <Compile Include="Conference.cs" />
+    <Compile Include="Indexes\SpeakerNameIndex.cs" />
+    <Compile Include="Indexes\SpeakerSessionOverview.cs" />
+    <Compile Include="Indexes\SpeakerSessionOverview2.cs" />
+    <Compile Include="Indexes\SpeakerSessionOverview2Index.cs" />
+    <Compile Include="Indexes\SpeakerSessionOverview2Transformer.cs" />
+    <Compile Include="Indexes\SpeakerSessionOverviewIndex.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="SessionSlot.cs" />
     <Compile Include="Speaker.cs" />
@@ -62,9 +68,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Indexes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
