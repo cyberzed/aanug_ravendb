@@ -42,21 +42,10 @@ namespace AANUG_RavenDB
 			if (!SessionSlots.Contains(sessionSlot))
 				throw new ArgumentOutOfRangeException("sessionSlot");
 
-			if (!Schedule.Any(si => si.SessionSlot == sessionSlot && si.Session == session))
-				Schedule.Add(new ScheduleItem(sessionSlot, session));
+			var scheduleItem = new ScheduleItem(sessionSlot, session);
+
+			if (!Schedule.Any(si => si.Equals(scheduleItem)))
+				Schedule.Add(scheduleItem);
 		}
-	}
-
-	public class ScheduleItem
-	{
-		public ScheduleItem(SessionSlot sessionSlot, Session session)
-		{
-			SessionSlot = sessionSlot;
-			Session = session;
-		}
-
-		public SessionSlot SessionSlot { get; private set; }
-
-		public Session Session { get; private set; }
 	}
 }

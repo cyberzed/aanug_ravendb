@@ -60,6 +60,7 @@
     <Compile Include="Indexes\SpeakerSessionOverview2Index.cs" />
     <Compile Include="Indexes\SpeakerSessionOverview2Transformer.cs" />
     <Compile Include="Indexes\SpeakerSessionOverviewIndex.cs" />
+    <Compile Include="ScheduleItem.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="SessionSlot.cs" />
     <Compile Include="Speaker.cs" />
