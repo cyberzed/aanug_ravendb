@@ -71,7 +71,6 @@ Hvad er det her NoSQL? ...NotSQL vs. No-Only-SQL?
 * Non-indexed
 	* Temp Index
 	* Auto Index
-* Auto Index
 * Map / Reduce
 	* Simple
 	* Multi-map
