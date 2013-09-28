@@ -1,20 +1,36 @@
 # Take-off med RavenDB
 
-Hvad er det her NoSQL? ...NotSQL vs. No-Only-SQL?
+NoSQL?
 
-### CAP-theorem
+ ...NotSQL, No-Only-SQL ?
+
+
+> A NoSQL database provides a mechanism for storage and retrieval of data that employs less constrained consistency models than traditional relational databases. Motivations for this approach include simplicity of design, horizontal scaling and finer control over availability. NoSQL databases are often highly optimized key–value stores intended for simple retrieval and appending operations, with the goal being significant performance benefits in terms of latency and throughput. NoSQL databases are finding significant and growing industry use in big data and real-time web applications. <cite>Wikipedia</cite>
+
+## Facetter af NoSQL
+
+* Schema-free
+* Skalerbar
+* Ingen relationel model
+
+ref: Martin Fowler - Definition NoSQL [1]
+
+### Databasetyper
+
+* Key/Value
+* Column
+* Document
+* Graph
+
+#### CAP-theorem
 
 * Consistency
 * Availability
 * Partition tollerance
 
-### Databasetyper
+> "two out of three" concept can be misleading or misapplied <cite>Eric Brewer</cite>
 
-* Graph
-* Key/Value
-* Document
-
-### Hvordan ser Ravnen ud?
+## Hvordan ser Ravnen ud?
 
 * Schema-free
 * Fast-reads
@@ -22,11 +38,11 @@ Hvad er det her NoSQL? ...NotSQL vs. No-Only-SQL?
 * Deployment-muligheder
 * Safe-by-default
 	* Det er svært at gøre noget "dumt"
-		* Limit på antal reads
+		* Limit på antal requests (30)
 		* Limit på mængden af data (128/1024)
 	* Transactional
 
-### Men hvordan flyver Ravnen så?
+## Men hvordan flyver Ravnen så?
 
 * Documenter
 	* POCO / JSON
@@ -36,9 +52,9 @@ Hvad er det her NoSQL? ...NotSQL vs. No-Only-SQL?
 	* int, Guid...mv.
 * LINQ
 
-### Man skal lette før man kan flyve
+## Man skal lette før man kan flyve
 
-##### Hosts
+#### Hosts
 
 * Debug console
 * Windows Service
@@ -46,26 +62,25 @@ Hvad er det her NoSQL? ...NotSQL vs. No-Only-SQL?
 * Embedded
 * Cloud
 
-##### Storage
+#### Storage
 * InMemory
 	* Unittest
 	* Cache
 * Disk
 
-### Så vis da noget kode!
+## Så vis da noget kode!
 
 * Connecting
 	* DocumentStore
 	* DocumentSession
 * CRUD
-	* Defer -> DeleteCommandData
 * Query
 	* Eventual consistency
 		* IndexStore...eventually
 		* DocumentStore...immediately (eg. Load)
 	* Strings...you wish
 
-#### Indexes
+### Indexes
 
 * Lucene
 * Non-indexed
@@ -78,9 +93,11 @@ Hvad er det her NoSQL? ...NotSQL vs. No-Only-SQL?
 * Aging
 * Maintainance
 
-#### Bundles
+### Bundles
 
-### Management
+## Management
 
 * Backup / Restore
 * Lock Index
+
+[1]: http://martinfowler.com/bliki/NosqlDefinition.html
